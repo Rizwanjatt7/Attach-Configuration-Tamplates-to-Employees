@@ -1,0 +1,33 @@
+class Employee:
+    def __init__(self, name, id, department):
+        self.name = name
+        self.id = id
+        self.department = department
+    
+    def get_name(self):
+        return self.name
+    
+    def get_id(self):
+        return self.id
+    
+    def attach_template(self, template):
+        # implementation details hidden using data abstraction
+        pass
+
+class Configuration:
+    def __init__(self, template_name, template_id, template_description):
+        self.template_name = template_name
+        self.template_id = template_id
+        self.template_description = template_description
+    
+    def get_template_name(self):
+        return self.template_name
+    
+    def get_template_id(self):
+        return self.template_id
+
+# example usage
+employee1 = Employee("John", "1234", "Sales")
+config1 = Configuration("SalesTemplate", "5678", "Sales configuration template")
+
+employee1.attach_template(config1)
