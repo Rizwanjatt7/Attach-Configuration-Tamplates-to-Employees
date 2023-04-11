@@ -1,0 +1,19 @@
+class Employee:
+    def __init__(self, name, age, address):
+        self.name = name
+        self.age = age
+        self.address = address
+    
+    def attach_configuration(self, configuration):
+        self.configuration = configuration
+        print(f"Configuration {self.configuration.name} attached to employee {self.name}")
+        
+class Configuration:
+    def __init__(self, name, details):
+        self.name = name
+        self.details = details
+
+employee1 = Employee("John", 25, "123 Main St")
+config1 = Configuration("Template1", "Details of Template1")
+
+employee1.attach_configuration(config1)
