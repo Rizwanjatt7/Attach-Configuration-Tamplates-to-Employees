@@ -1,0 +1,42 @@
+class Employee:
+    def __init__(self, name, department):
+        self.name = name
+        self.department = department
+        self.config_template = None
+
+    def attach_config_template(self, config_template):
+        self.config_template = config_template
+
+    def apply_config_template(self):
+        if self.config_template:
+            print(f"Applying configuration template {self.config_template} to {self.name}")
+        else:
+            print(f"No configuration template attached to {self.name}")
+
+class ConfigTemplate:
+    def __init__(self, name):
+        self.name = name
+
+    def apply(self, employee):
+        employee.attach_config_template(self)
+
+class HRConfigTemplate(ConfigTemplate):
+    def __init__(self):
+        super().__init__("HR Template")
+
+class ITConfigTemplate(ConfigTemplate):
+    def __init__(self):
+        super().__init__("IT Template")
+
+# Example usage
+employee1 = Employee("Alice", "HR")
+employee2 = Employee("Bob", "IT")
+
+hr_template = HRConfigTemplate()
+it_template = ITConfigTemplate()
+
+hr_template.apply(employee1)
+it_template.apply(employee2)
+
+employee1.apply_config_template()  # Applying configuration template HR Template to Alice
+employee2.apply_config_template()  # Applying configuration template IT Template to Bob
