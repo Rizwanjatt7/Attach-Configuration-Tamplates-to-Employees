@@ -1,0 +1,10 @@
+class ConfigTemplate:
+    def __init__(self, name, settings):
+        self.name = name
+        self.settings = settings
+    
+    def describe(self):
+        print(f"Template Name: {self.name}")
+        print("Settings:")
+        for setting, value in self.settings.items():
+            print(f"\t{setting}: {value}")
