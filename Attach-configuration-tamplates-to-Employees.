@@ -1,0 +1,8 @@
+config_template_1 = ConfigTemplate("Template 1", {"Setting 1": "Value 1", "Setting 2": "Value 2"})
+config_template_2 = ConfigTemplate("Template 2", {"Setting 3": "Value 3", "Setting 4": "Value 4"})
+
+manager_1 = Manager("John Doe", "Sales")
+manager_1.assign_config_template(config_template_1)
+
+engineer_1 = Engineer("Jane Smith", "Engineering")
+engineer_1.assign_config_template(config_template_2)
