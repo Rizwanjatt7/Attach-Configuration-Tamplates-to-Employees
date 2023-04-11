@@ -1,0 +1,8 @@
+class Manager(Employee):
+    def __init__(self, name, department):
+        super().__init__(name, "Manager", department)
+
+
+class Engineer(Employee):
+    def __init__(self, name, department):
+        super().__init__(name, "Engineer", department)
