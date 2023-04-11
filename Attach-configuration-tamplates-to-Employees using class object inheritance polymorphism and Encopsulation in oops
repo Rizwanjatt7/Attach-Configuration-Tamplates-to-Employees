@@ -1,0 +1,14 @@
+class Employee:
+    def __init__(self, name, position, department):
+        self.name = name
+        self.position = position
+        self.department = department
+        self.config_template = None
+    
+    def assign_config_template(self, template):
+        self.config_template = template
+    
+    def describe(self):
+        print(f"Name: {self.name}")
+        print(f"Position: {self.position}")
+        print(f"Department: {self.department}")
