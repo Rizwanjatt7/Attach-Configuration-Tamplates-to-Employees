@@ -1,0 +1,75 @@
+class Employee:
+    def __init__(self, name, id, job_title):
+        self.name = name
+        self.id = id
+        self.job_title = job_title
+    
+    def get_name(self):
+        return self.name
+    
+    def get_id(self):
+        return self.id
+    
+    def get_job_title(self):
+        return self.job_title
+
+class FullTimeEmployee(Employee):
+    def __init__(self, name, id, job_title):
+        super().__init__(name, id, job_title)
+        self.config_template = None
+        
+    def attach_config_template(self, config_template):
+        self.config_template = config_template
+
+class PartTimeEmployee(Employee):
+    def __init__(self, name, id, job_title):
+        super().__init__(name, id, job_title)
+        self.config_template = None
+        
+    def attach_config_template(self, config_template):
+        self.config_template = config_template
+
+class Contractor(Employee):
+    def __init__(self, name, id, job_title):
+        super().__init__(name, id, job_title)
+        self.config_template = None
+        
+    def attach_config_template(self, config_template):
+        self.config_template = config_template
+
+class ConfigTemplate:
+    def __init__(self, setting1, setting2):
+        self.setting1 = setting1
+        self.setting2 = setting2
+    
+    def get_setting1(self):
+        return self.setting1
+    
+    def get_setting2(self):
+        return self.setting2
+
+# Creating employee objects
+fulltime_employee = FullTimeEmployee("John Smith", 123, "Software Engineer")
+parttime_employee = PartTimeEmployee("Alice Jones", 456, "Graphic Designer")
+contractor_employee = Contractor("Bob Brown", 789, "IT Consultant")
+
+# Creating config template object
+config_template = ConfigTemplate("Option A", "Option B")
+
+# Attaching config template to employees
+fulltime_employee.attach_config_template(config_template)
+parttime_employee.attach_config_template(config_template)
+contractor_employee.attach_config_template(config_template)
+
+# Accessing employee attributes and config template settings
+print(fulltime_employee.get_name())
+print(fulltime_employee.get_job_title())
+print(fulltime_employee.config_template.get_setting1())
+
+print(parttime_employee.get_name())
+print(parttime_employee.get_job_title())
+print(parttime_employee.config_template.get_setting2())
+
+print(contractor_employee.get_name())
+print(contractor_employee.get_job_title())
+print(contractor_employee.config_template.get_setting1())
